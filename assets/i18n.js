@@ -7,6 +7,7 @@ window.BF_I18N = {
 				prices: "Prijzen",
 				about: "Over ons",
 				work: "Ons werk",
+				gallery: "Galerij",
 				contacts: "Contact",
 			},
 			hero: {
@@ -62,6 +63,11 @@ window.BF_I18N = {
 				before: "Voor",
 				after: "Na",
 			},
+			gallery: {
+				kicker: "Galerij",
+				title: "Ons werk in beeld",
+				sub: "Een impressie van recente reinigingsprojecten.",
+			},
 			faq: {kicker: "FAQ", title: "Veelgestelde vragen"},
 			contact: {
 				kicker: "Contact",
@@ -88,6 +94,7 @@ window.BF_I18N = {
 				prices: "Prices",
 				about: "About",
 				work: "Our work",
+				gallery: "Gallery",
 				contacts: "Contact",
 			},
 			hero: {
@@ -142,6 +149,11 @@ window.BF_I18N = {
 				sub: "Real results from our cleanings — no filters. Drag the slider to compare.",
 				before: "Before",
 				after: "After",
+			},
+			gallery: {
+				kicker: "Gallery",
+				title: "Our work in pictures",
+				sub: "A look at recent cleaning projects.",
 			},
 			faq: {kicker: "FAQ", title: "Frequently asked questions"},
 			contact: {

@@ -21,7 +21,9 @@
 					content="schoonmaakbedrijf Roosendaal, cleaning Roosendaal, hogedrukreiniging, glasbewassing, dieptereiniging, kantoorreiniging, Black Force Cleaning"
 				/>
 				<meta name="robots" content="index, follow" />
+				<link rel="canonical" href="https://blackforse.nl/" />
 				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://blackforse.nl/" />
 				<meta
 					property="og:title"
 					content="Black Force Cleaning — Professionele reiniging in Roosendaal"
@@ -30,9 +32,31 @@
 					property="og:description"
 					content="Professionele binnen- en buitenreiniging voor woningen, kantoren en bedrijfspanden. Clean. Quality. Power."
 				/>
-				<meta property="og:image" content="assets/logo-circle.jpg" />
+				<meta property="og:image" content="https://blackforse.nl/assets/logo-circle.jpg" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<link rel="stylesheet" href="assets/styles.css" />
+				<script type="application/ld+json">
+					{
+						"@context": "https://schema.org",
+						"@type": "LocalBusiness",
+						"name": "Black Force Cleaning",
+						"alternateName": "Black Force V.O.F.",
+						"image": "https://blackforse.nl/assets/logo-circle.jpg",
+						"url": "https://blackforse.nl/",
+						"telephone": "+31685228679",
+						"email": "blackforcevof@gmail.com",
+						"description": "Professionele binnen- en buitenreiniging in Roosendaal. Woningen, kantoren, hogedrukreiniging, glasbewassing en tuinonderhoud.",
+						"priceRange": "€€",
+						"address": {
+							"@type": "PostalAddress",
+							"postalCode": "4701 BN",
+							"addressLocality": "Roosendaal",
+							"addressCountry": "NL"
+						},
+						"areaServed": "Roosendaal",
+						"sameAs": ["https://t.me/blackforcecleaning"]
+					}
+				</script>
 			</helmet>
 			<div style="max-width: 100%; overflow-x: hidden">
 				<!-- ============ NAV ============ -->
@@ -89,6 +113,7 @@
 								letter-spacing: 0.02em;
 							"
 						>
+							<a href="#gallery" style="color: #cfc9bc">{{ t.nav.gallery }}</a>
 							<a href="#services" style="color: #cfc9bc"
 								>{{ t.nav.services }}</a
 							>
@@ -216,6 +241,18 @@
 							animation: bfSlideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 						"
 					>
+						<a
+							href="#gallery"
+							onClick="{{ closeMenu }}"
+							style="
+								color: #f3ecda;
+								font-size: 16px;
+								font-weight: 500;
+								padding: 12px 0;
+								border-bottom: 1px solid rgba(212, 167, 58, 0.18);
+							"
+							>{{ t.nav.gallery }}</a
+						>
 						<a
 							href="#services"
 							onClick="{{ closeMenu }}"
@@ -669,6 +706,74 @@
 						>
 					</div>
 				</div>
+
+				<!-- ============ GALLERY ============ -->
+				<section
+					id="gallery"
+					style="max-width: 1240px; margin: 0 auto; padding: 88px 24px"
+				>
+					<div style="text-align: center; margin-bottom: 44px">
+						<div
+							style="
+								font-size: 12.5px;
+								letter-spacing: 0.2em;
+								font-weight: 700;
+								color: #d4a73a;
+								text-transform: uppercase;
+							"
+						>
+							{{ t.gallery.kicker }}
+						</div>
+						<h2
+							style="
+								font-size: 42px;
+								font-weight: 700;
+								margin-top: 12px;
+								text-transform: uppercase;
+							"
+						>
+							{{ t.gallery.title }}
+						</h2>
+						<p style="color: #b7b0a3; font-size: 16px; margin-top: 12px">
+							{{ t.gallery.sub }}
+						</p>
+					</div>
+					<div
+						class="bf-g4"
+						style="
+							display: grid;
+							grid-template-columns: repeat(4, 1fr);
+							gap: 22px;
+						"
+					>
+						<sc-for list="{{ gallery }}" as="g" hint-placeholder-count="4">
+							<div
+								style="
+									position: relative;
+									aspect-ratio: 1/1;
+									border-radius: 16px;
+									overflow: hidden;
+									border: 1px solid rgba(212, 167, 58, 0.18);
+								"
+								style-hover="border:1px solid rgba(212,167,58,.5)"
+							>
+								<img
+									src="{{ g.src }}"
+									alt="{{ g.alt }}"
+									loading="lazy"
+									style="
+										position: absolute;
+										inset: 0;
+										width: 100%;
+										height: 100%;
+										object-fit: cover;
+										display: block;
+									"
+								/>
+							</div>
+						</sc-for>
+					</div>
+				</section>
 
 				<!-- ============ SERVICES ============ -->
 				<section
@@ -2361,8 +2466,9 @@
 							<a href="#about" style="color: #b7b0a3">{{ t.nav.about }}</a>
 							<a href="#contact" style="color: #b7b0a3">{{ t.nav.contacts }}</a>
 						</div>
-						<div style="font-size: 12px; color: #6b6558">
-							© 2026 Black Force Cleaning · Roosendaal
+						<div style="font-size: 12px; color: #6b6558; text-align: right">
+							© 2026 Black Force Cleaning · Roosendaal<br />
+							Black Force V.O.F. · KVK 42056797 · BTW NL869509627B01
 						</div>
 					</div>
 				</footer>
@@ -2410,9 +2516,20 @@
 			const FAQ = window.BF_I18N.FAQ;
 
 			const BAPAIRS = [
-			  { before: 'assets/photo-pressure.jpg', after: 'assets/photo-bathroom.jpg' },
-			  { before: 'assets/photo-equipment.jpg', after: 'assets/photo-bedroom.jpg' },
-			  { before: 'assets/photo-bathroom.jpg', after: 'assets/photo-pressure.jpg' }
+			  { before: 'slot-images/dvor-before.jpg', after: 'slot-images/dvor-after.jpg' },
+			  { before: 'slot-images/dvor-2-before.jpg', after: 'slot-images/dvor-2-after.jpg' },
+			  { before: 'slot-images/dvor-3-before.jpg', after: 'slot-images/dvor-3-after.jpg' },
+			  { before: 'slot-images/dvor-4-before.jpg', after: 'slot-images/dvor-4-after.jpg' },
+			  { before: 'slot-images/kran-before.jpg', after: 'slot-images/kran-after.jpg' },
+			  { before: 'slot-images/kran-2-before.jpg', after: 'slot-images/kran-2-after.jpg' },
+			  { before: 'slot-images/rakavina-before.jpg', after: 'slot-images/rakavina-after.jpg' }
+			];
+
+			const GALLERY = [
+			  { src: 'gallery/photo-bathroom.jpg', alt: 'Bathroom cleaning' },
+			  { src: 'gallery/photo-bedroom.jpg', alt: 'Bedroom cleaning' },
+			  { src: 'gallery/photo-equipment.jpg', alt: 'Cleaning equipment' },
+			  { src: 'gallery/photo-pressure.jpg', alt: 'Pressure washing' }
 			];
 
 			class Component extends DCLogic {
@@ -2459,6 +2576,7 @@
 			      baPrev: () => this.setState(s => ({ baIdx: (s.baIdx - 1 + BAPAIRS.length) % BAPAIRS.length, baPct: 50 })),
 			      baNext: () => this.setState(s => ({ baIdx: (s.baIdx + 1) % BAPAIRS.length, baPct: 50 })),
 			      baDots: BAPAIRS.map((_, i) => ({ color: i === this.state.baIdx ? '#F6E27A' : 'rgba(212,167,58,.3)', goto: () => this.setState({ baIdx: i, baPct: 50 }) })),
+			      gallery: GALLERY,
 			      surcharges: SURCHARGES[lang],
 			      benefits: BENEFITS[lang],
 			      reviews: REVIEWS[lang],
