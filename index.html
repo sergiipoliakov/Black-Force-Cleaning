@@ -23,10 +23,29 @@
 				<meta name="robots" content="index, follow" />
 				<link rel="canonical" href="https://blackforse.nl/" />
 				<link rel="icon" href="assets/favicon.ico" sizes="any" />
-				<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-				<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-				<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-				<link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="assets/favicon-16x16.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="assets/favicon-32x32.png"
+				/>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="assets/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="192x192"
+					href="assets/android-chrome-192x192.png"
+				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://blackforse.nl/" />
 				<meta
@@ -37,7 +56,10 @@
 					property="og:description"
 					content="Professionele binnen- en buitenreiniging voor woningen, kantoren en bedrijfspanden. Clean. Quality. Power."
 				/>
-				<meta property="og:image" content="https://blackforse.nl/assets/logo-circle.jpg" />
+				<meta
+					property="og:image"
+					content="https://blackforse.nl/assets/logo-circle.jpg"
+				/>
 				<meta name="twitter:card" content="summary_large_image" />
 				<link rel="stylesheet" href="assets/styles.css" />
 				<script type="application/ld+json">
@@ -1078,30 +1100,6 @@
 								</h3>
 								<div
 									style="
-										display: flex;
-										align-items: baseline;
-										gap: 8px;
-										margin-top: 14px;
-									"
-								>
-									<span style="font-size: 12px; color: #8a8578"
-										>{{ p.fromLabel }}</span
-									>
-									<span
-										style="
-											font-family: &quot;Chakra Petch&quot;, sans-serif;
-											font-size: 26px;
-											font-weight: 700;
-											background: linear-gradient(135deg, #f9e68b, #b8860b);
-											-webkit-background-clip: text;
-											background-clip: text;
-											color: transparent;
-										"
-										>{{ p.from }}</span
-									>
-								</div>
-								<div
-									style="
 										height: 1px;
 										background: rgba(212, 167, 58, 0.16);
 										margin: 16px 0;
@@ -1135,15 +1133,6 @@
 													line-height: 1.4;
 												"
 												>{{ it.label }}</span
-											>
-											<span
-												style="
-													font-size: 13.5px;
-													font-weight: 600;
-													color: #e8c25a;
-													white-space: nowrap;
-												"
-												>{{ it.val }}</span
 											>
 										</div>
 									</sc-for>
@@ -1220,30 +1209,6 @@
 								</h3>
 								<div
 									style="
-										display: flex;
-										align-items: baseline;
-										gap: 8px;
-										margin-top: 14px;
-									"
-								>
-									<span style="font-size: 12px; color: #8a8578"
-										>{{ p.fromLabel }}</span
-									>
-									<span
-										style="
-											font-family: &quot;Chakra Petch&quot;, sans-serif;
-											font-size: 26px;
-											font-weight: 700;
-											background: linear-gradient(135deg, #f9e68b, #b8860b);
-											-webkit-background-clip: text;
-											background-clip: text;
-											color: transparent;
-										"
-										>{{ p.from }}</span
-									>
-								</div>
-								<div
-									style="
 										height: 1px;
 										background: rgba(212, 167, 58, 0.16);
 										margin: 16px 0;
@@ -1277,15 +1242,6 @@
 													line-height: 1.4;
 												"
 												>{{ it.label }}</span
-											>
-											<span
-												style="
-													font-size: 13.5px;
-													font-weight: 600;
-													color: #e8c25a;
-													white-space: nowrap;
-												"
-												>{{ it.val }}</span
 											>
 										</div>
 									</sc-for>
@@ -1333,23 +1289,10 @@
 						>
 						<sc-for list="{{ surcharges }}" as="s" hint-placeholder-count="4">
 							<span style="font-size: 13.5px; color: #b7b0a3"
-								><span style="color: #f6e27a; font-weight: 600"
-									>{{ s.val }}</span
-								>
-								{{ s.label }}</span
+								>{{ s.label }}</span
 							>
 						</sc-for>
 					</div>
-					<p
-						style="
-							text-align: center;
-							color: #6b6558;
-							font-size: 12.5px;
-							margin-top: 14px;
-						"
-					>
-						{{ t.prices.vat }}
-					</p>
 				</section>
 
 				<!-- ============ BENEFITS ============ -->
@@ -2521,6 +2464,8 @@
 			const FAQ = window.BF_I18N.FAQ;
 
 			const BAPAIRS = [
+			  { before: 'slot-images/yard-before.jpg', after: 'slot-images/yard-after.jpg' },
+			  { before: 'slot-images/yard-2-before.jpg', after: 'slot-images/yard-2-after.jpg' },
 			  { before: 'slot-images/dvor-before.jpg', after: 'slot-images/dvor-after.jpg' },
 			  { before: 'slot-images/dvor-2-before.jpg', after: 'slot-images/dvor-2-after.jpg' },
 			  { before: 'slot-images/dvor-3-before.jpg', after: 'slot-images/dvor-3-after.jpg' },
