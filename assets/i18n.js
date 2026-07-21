@@ -306,10 +306,10 @@ window.BF_I18N = {
 				fromLabel: "vanaf",
 				from: "€150",
 				items: [
-					{label: "Tot 50 m²", val: "€150"},
-					{label: "50–80 m²", val: "€180"},
-					{label: "80–120 m²", val: "€250"},
-					{label: "120+ m²", val: "vanaf €350"},
+					// {label: "Tot 50 m²", val: "€150"},
+					// {label: "50–80 m²", val: "€180"},
+					// {label: "80–120 m²", val: "€250"},
+					// {label: "120+ m²", val: "vanaf €350"},
 				],
 			},
 			{
@@ -317,25 +317,25 @@ window.BF_I18N = {
 				fromLabel: "vanaf",
 				from: "€180",
 				items: [
-					{label: "Studio", val: "€180–220"},
-					{label: "1–2 slaapkamers", val: "€220–320"},
-					{label: "3 slaapkamers", val: "€320–450"},
-					{label: "Grote woning", val: "€450–700+"},
+					// {label: "Studio", val: "€180–220"},
+					// {label: "1–2 slaapkamers", val: "€220–320"},
+					// {label: "3 slaapkamers", val: "€320–450"},
+					// {label: "Grote woning", val: "€450–700+"},
 				],
 			},
 			{
-				title: "Sportschool & bedrijf (50–70 m²)",
+				title: "Sportschool & bedrijf",
 				fromLabel: "vanaf",
 				from: "€100",
 				items: [
-					{label: "Eenmalig bezoek", val: "€100"},
-					{label: "3× per week", val: "€300/week"},
-					{label: "Maandcontract", val: "€1.200–1.300"},
-					{label: "Middelen", val: "inbegrepen of apart"},
+					// {label: "Eenmalig bezoek", val: "€100"},
+					// {label: "3× per week", val: "€300/week"},
+					// {label: "Maandcontract", val: "€1.200–1.300"},
+					// {label: "Middelen", val: "inbegrepen of apart"},
 				],
 			},
 			{
-				title: "Ramen & aanvullende diensten",
+				title: "aanvullende diensten",
 				fromLabel: "vanaf",
 				from: "€5",
 				items: [
@@ -365,10 +365,10 @@ window.BF_I18N = {
 				fromLabel: "from",
 				from: "€150",
 				items: [
-					{label: "Up to 50 m²", val: "€150"},
-					{label: "50–80 m²", val: "€180"},
-					{label: "80–120 m²", val: "€250"},
-					{label: "120+ m²", val: "from €350"},
+					// {label: "Up to 50 m²", val: "€150"},
+					// {label: "50–80 m²", val: "€180"},
+					// {label: "80–120 m²", val: "€250"},
+					// {label: "120+ m²", val: "from €350"},
 				],
 			},
 			{
@@ -376,14 +376,14 @@ window.BF_I18N = {
 				fromLabel: "from",
 				from: "€180",
 				items: [
-					{label: "Studio", val: "€180–220"},
-					{label: "1–2 bedrooms", val: "€220–320"},
-					{label: "3 bedrooms", val: "€320–450"},
-					{label: "Large house", val: "€450–700+"},
+					// {label: "Studio", val: "€180–220"},
+					// {label: "1–2 bedrooms", val: "€220–320"},
+					// {label: "3 bedrooms", val: "€320–450"},
+					// {label: "Large house", val: "€450–700+"},
 				],
 			},
 			{
-				title: "Gym & commercial (50–70 m²)",
+				title: "Gym & commercial",
 				fromLabel: "from",
 				from: "€100",
 				items: [
@@ -394,7 +394,7 @@ window.BF_I18N = {
 				],
 			},
 			{
-				title: "Windows & add-on services",
+				title: "Add-on services",
 				fromLabel: "from",
 				from: "€5",
 				items: [
