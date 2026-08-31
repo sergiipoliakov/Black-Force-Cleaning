@@ -734,6 +734,210 @@
 					</div>
 				</div>
 
+				<!-- ============ OUR WORK / BEFORE-AFTER ============ -->
+				<section
+					id="work"
+					style="max-width: 1240px; margin: 0 auto; padding: 88px 24px"
+				>
+					<div style="text-align: center; margin-bottom: 44px">
+						<div
+							style="
+								font-size: 12.5px;
+								letter-spacing: 0.2em;
+								font-weight: 700;
+								color: #d4a73a;
+								text-transform: uppercase;
+							"
+						>
+							{{ t.work.kicker }}
+						</div>
+						<h2
+							style="
+								font-size: 42px;
+								font-weight: 700;
+								margin-top: 12px;
+								text-transform: uppercase;
+							"
+						>
+							{{ t.work.title }}
+						</h2>
+						<p style="color: #b7b0a3; font-size: 16px; margin-top: 12px">
+							{{ t.work.sub }}
+						</p>
+					</div>
+					<div style="position: relative; max-width: 460px; margin: 0 auto">
+						<button
+							onClick="{{ baPrev }}"
+							aria-label="Prev"
+							style="
+								position: absolute;
+								left: -18px;
+								top: 50%;
+								transform: translateY(-50%);
+								z-index: 5;
+								width: 44px;
+								height: 44px;
+								border-radius: 50%;
+								border: 1px solid rgba(212, 167, 58, 0.4);
+								background: rgba(10, 9, 8, 0.8);
+								color: #f6e27a;
+								font-size: 20px;
+								cursor: pointer;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							"
+						>
+							‹
+						</button>
+						<button
+							onClick="{{ baNext }}"
+							aria-label="Next"
+							style="
+								position: absolute;
+								right: -18px;
+								top: 50%;
+								transform: translateY(-50%);
+								z-index: 5;
+								width: 44px;
+								height: 44px;
+								border-radius: 50%;
+								border: 1px solid rgba(212, 167, 58, 0.4);
+								background: rgba(10, 9, 8, 0.8);
+								color: #f6e27a;
+								font-size: 20px;
+								cursor: pointer;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							"
+						>
+							›
+						</button>
+						<div
+							style="
+								position: relative;
+								aspect-ratio: 3/4;
+								border-radius: 18px;
+								overflow: hidden;
+								border: 1px solid rgba(212, 167, 58, 0.3);
+								user-select: none;
+								touch-action: none;
+								box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+								background: #141210;
+							"
+						>
+							<img
+								src="{{ baAfter }}"
+								alt="after"
+								style="
+									position: absolute;
+									inset: 0;
+									width: 100%;
+									height: 100%;
+									object-fit: contain;
+									display: block;
+								"
+							/>
+							<img
+								src="{{ baBefore }}"
+								alt="before"
+								style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;clip-path:{{ baBeforeClip }};-webkit-clip-path:{{ baBeforeClip }}"
+							/>
+							<span
+								style="
+									position: absolute;
+									left: 16px;
+									top: 16px;
+									background: rgba(10, 9, 8, 0.72);
+									color: #f6e27a;
+									font-size: 12.5px;
+									font-weight: 700;
+									letter-spacing: 0.1em;
+									text-transform: uppercase;
+									padding: 6px 12px;
+									border-radius: 8px;
+								"
+								>{{ t.work.before }}</span
+							>
+							<span
+								style="
+									position: absolute;
+									right: 16px;
+									top: 16px;
+									background: rgba(10, 9, 8, 0.72);
+									color: #f6e27a;
+									font-size: 12.5px;
+									font-weight: 700;
+									letter-spacing: 0.1em;
+									text-transform: uppercase;
+									padding: 6px 12px;
+									border-radius: 8px;
+								"
+								>{{ t.work.after }}</span
+							>
+							<div
+								style="position:absolute;top:0;bottom:0;left:{{ baDividerLeft }};width:3px;background:linear-gradient(#F9E68B,#B8860B);transform:translateX(-50%);pointer-events:none"
+							>
+								<div
+									style="
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%, -50%);
+										width: 42px;
+										height: 42px;
+										border-radius: 50%;
+										background: linear-gradient(135deg, #f9e68b, #b8860b);
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										color: #0a0908;
+										font-size: 16px;
+										font-weight: 700;
+										box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+									"
+								>
+									⟷
+								</div>
+							</div>
+							<input
+								type="range"
+								min="0"
+								max="100"
+								value="{{ baPct }}"
+								onInput="{{ baInput }}"
+								aria-label="Before / after"
+								style="
+									position: absolute;
+									inset: 0;
+									width: 100%;
+									height: 100%;
+									margin: 0;
+									opacity: 0;
+									cursor: ew-resize;
+								"
+							/>
+						</div>
+						<div
+							style="
+								display: flex;
+								justify-content: center;
+								gap: 10px;
+								margin-top: 22px;
+							"
+						>
+							<sc-for list="{{ baDots }}" as="d" hint-placeholder-count="3">
+								<button
+									onClick="{{ d.goto }}"
+									aria-label="Slide"
+									style="width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;padding:0;background:{{ d.color }}"
+								></button>
+							</sc-for>
+						</div>
+					</div>
+				</section>
+
 				<!-- ============ GALLERY ============ -->
 				<section
 					id="gallery"
@@ -1625,209 +1829,6 @@
 					</div>
 				</section>
 
-				<!-- ============ OUR WORK / BEFORE-AFTER ============ -->
-				<section
-					id="work"
-					style="max-width: 1240px; margin: 0 auto; padding: 88px 24px"
-				>
-					<div style="text-align: center; margin-bottom: 44px">
-						<div
-							style="
-								font-size: 12.5px;
-								letter-spacing: 0.2em;
-								font-weight: 700;
-								color: #d4a73a;
-								text-transform: uppercase;
-							"
-						>
-							{{ t.work.kicker }}
-						</div>
-						<h2
-							style="
-								font-size: 42px;
-								font-weight: 700;
-								margin-top: 12px;
-								text-transform: uppercase;
-							"
-						>
-							{{ t.work.title }}
-						</h2>
-						<p style="color: #b7b0a3; font-size: 16px; margin-top: 12px">
-							{{ t.work.sub }}
-						</p>
-					</div>
-					<div style="position: relative; max-width: 920px; margin: 0 auto">
-						<button
-							onClick="{{ baPrev }}"
-							aria-label="Prev"
-							style="
-								position: absolute;
-								left: -18px;
-								top: 50%;
-								transform: translateY(-50%);
-								z-index: 5;
-								width: 44px;
-								height: 44px;
-								border-radius: 50%;
-								border: 1px solid rgba(212, 167, 58, 0.4);
-								background: rgba(10, 9, 8, 0.8);
-								color: #f6e27a;
-								font-size: 20px;
-								cursor: pointer;
-								display: flex;
-								align-items: center;
-								justify-content: center;
-							"
-						>
-							‹
-						</button>
-						<button
-							onClick="{{ baNext }}"
-							aria-label="Next"
-							style="
-								position: absolute;
-								right: -18px;
-								top: 50%;
-								transform: translateY(-50%);
-								z-index: 5;
-								width: 44px;
-								height: 44px;
-								border-radius: 50%;
-								border: 1px solid rgba(212, 167, 58, 0.4);
-								background: rgba(10, 9, 8, 0.8);
-								color: #f6e27a;
-								font-size: 20px;
-								cursor: pointer;
-								display: flex;
-								align-items: center;
-								justify-content: center;
-							"
-						>
-							›
-						</button>
-						<div
-							style="
-								position: relative;
-								aspect-ratio: 16/10;
-								border-radius: 18px;
-								overflow: hidden;
-								border: 1px solid rgba(212, 167, 58, 0.3);
-								user-select: none;
-								touch-action: none;
-								box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-							"
-						>
-							<img
-								src="{{ baAfter }}"
-								alt="after"
-								style="
-									position: absolute;
-									inset: 0;
-									width: 100%;
-									height: 100%;
-									object-fit: cover;
-									display: block;
-								"
-							/>
-							<img
-								src="{{ baBefore }}"
-								alt="before"
-								style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;clip-path:{{ baBeforeClip }};-webkit-clip-path:{{ baBeforeClip }}"
-							/>
-							<span
-								style="
-									position: absolute;
-									left: 16px;
-									top: 16px;
-									background: rgba(10, 9, 8, 0.72);
-									color: #f6e27a;
-									font-size: 12.5px;
-									font-weight: 700;
-									letter-spacing: 0.1em;
-									text-transform: uppercase;
-									padding: 6px 12px;
-									border-radius: 8px;
-								"
-								>{{ t.work.before }}</span
-							>
-							<span
-								style="
-									position: absolute;
-									right: 16px;
-									top: 16px;
-									background: rgba(10, 9, 8, 0.72);
-									color: #f6e27a;
-									font-size: 12.5px;
-									font-weight: 700;
-									letter-spacing: 0.1em;
-									text-transform: uppercase;
-									padding: 6px 12px;
-									border-radius: 8px;
-								"
-								>{{ t.work.after }}</span
-							>
-							<div
-								style="position:absolute;top:0;bottom:0;left:{{ baDividerLeft }};width:3px;background:linear-gradient(#F9E68B,#B8860B);transform:translateX(-50%);pointer-events:none"
-							>
-								<div
-									style="
-										position: absolute;
-										top: 50%;
-										left: 50%;
-										transform: translate(-50%, -50%);
-										width: 42px;
-										height: 42px;
-										border-radius: 50%;
-										background: linear-gradient(135deg, #f9e68b, #b8860b);
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										color: #0a0908;
-										font-size: 16px;
-										font-weight: 700;
-										box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-									"
-								>
-									⟷
-								</div>
-							</div>
-							<input
-								type="range"
-								min="0"
-								max="100"
-								value="{{ baPct }}"
-								onInput="{{ baInput }}"
-								aria-label="Before / after"
-								style="
-									position: absolute;
-									inset: 0;
-									width: 100%;
-									height: 100%;
-									margin: 0;
-									opacity: 0;
-									cursor: ew-resize;
-								"
-							/>
-						</div>
-						<div
-							style="
-								display: flex;
-								justify-content: center;
-								gap: 10px;
-								margin-top: 22px;
-							"
-						>
-							<sc-for list="{{ baDots }}" as="d" hint-placeholder-count="3">
-								<button
-									onClick="{{ d.goto }}"
-									aria-label="Slide"
-									style="width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;padding:0;background:{{ d.color }}"
-								></button>
-							</sc-for>
-						</div>
-					</div>
-				</section>
-
 				<!-- ============ FAQ ============ -->
 				<section
 					id="faq"
@@ -2472,7 +2473,13 @@
 			  { before: 'slot-images/dvor-4-before.jpg', after: 'slot-images/dvor-4-after.jpg' },
 			  { before: 'slot-images/kran-before.jpg', after: 'slot-images/kran-after.jpg' },
 			  { before: 'slot-images/kran-2-before.jpg', after: 'slot-images/kran-2-after.jpg' },
-			  { before: 'slot-images/rakavina-before.jpg', after: 'slot-images/rakavina-after.jpg' }
+			  { before: 'slot-images/kran-3-before.jpg', after: 'slot-images/kran-3-after.jpg' },
+			  { before: 'slot-images/rakavina-before.jpg', after: 'slot-images/rakavina-after.jpg' },
+			  { before: 'slot-images/kust-before.jpg', after: 'slot-images/kust-after.jpg' },
+			  { before: 'slot-images/polka-before.jpg', after: 'slot-images/polka-after.jpg' },
+			  { before: 'slot-images/stena-before.jpg', after: 'slot-images/stena-after.jpg' },
+			  { before: 'slot-images/stul-before.jpg', after: 'slot-images/stul-after.jpg' },
+			  { before: 'slot-images/zabor-before.jpg', after: 'slot-images/zabor-after.jpg' }
 			];
 
 			const GALLERY = [
