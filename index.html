@@ -2268,7 +2268,6 @@
 									<input
 										type="tel"
 										name="phone"
-										required
 										placeholder="+31 6 …"
 										style="
 											width: 100%;
@@ -2281,6 +2280,41 @@
 											font-family: &quot;Inter&quot;, sans-serif;
 										"
 									/>
+									<label
+										style="
+											display: block;
+											font-size: 12.5px;
+											color: #a39d90;
+											margin: 18px 0 7px;
+										"
+										>{{ t.contact.emailField }}</label
+									>
+									<input
+										type="email"
+										name="email"
+										placeholder="{{ t.contact.emailPh }}"
+										style="
+											width: 100%;
+											background: #0a0908;
+											border: 1px solid rgba(212, 167, 58, 0.25);
+											border-radius: 9px;
+											padding: 13px 14px;
+											color: #ece7dc;
+											font-size: 14.5px;
+											font-family: &quot;Inter&quot;, sans-serif;
+										"
+									/>
+									<sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+										<p
+											style="
+												font-size: 12.5px;
+												color: #e2765a;
+												margin: 10px 0 0;
+											"
+										>
+											{{ t.contact.formError }}
+										</p>
+									</sc-if>
 									<label
 										style="
 											display: block;
@@ -2491,7 +2525,7 @@
 			];
 
 			class Component extends DCLogic {
-			  state = { lang: 'nl', openFaq: 0, sent: false, baIdx: 0, baPct: 50, menuOpen: false };
+			  state = { lang: 'nl', openFaq: 0, sent: false, baIdx: 0, baPct: 50, menuOpen: false, formError: false };
 
 			  componentDidUpdate() {
 			    document.body.style.overflow = this.state.menuOpen ? 'hidden' : '';
@@ -2541,13 +2575,22 @@
 			      faqItems,
 			      sent: this.state.sent,
 			      notSent: !this.state.sent,
+			      formError: this.state.formError,
 			      submit: (e) => {
 			        e.preventDefault();
 			        const form = e.target;
-			        fetch('https://formsubmit.co/sergiipoliakov88@gmail.com', {
+			        const data = new FormData(form);
+			        const phone = (data.get('phone') || '').trim();
+			        const email = (data.get('email') || '').trim();
+			        if (!phone && !email) {
+			          this.setState({ formError: true });
+			          return;
+			        }
+			        this.setState({ formError: false });
+			        fetch('https://formsubmit.co/blackforcevof@gmail.com', {
 			          method: 'POST',
 			          headers: { 'Accept': 'application/json' },
-			          body: new FormData(form)
+			          body: data
 			        })
 			          .then(() => this.setState({ sent: true }))
 			          .catch(() => this.setState({ sent: true }));
